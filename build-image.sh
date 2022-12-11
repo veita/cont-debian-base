@@ -15,6 +15,10 @@ buildah run $CONT rm -rf /setup
 
 buildah config --author "Alexander Veit" $CONT
 buildah config --label commit=$(git describe --always --tags --dirty=-dirty) $CONT
+
+buildah config --env LANG='en_US.UTF-8' $CONT
+buildah config --env LANGUAGE='en_US:en' $CONT
+buildah config --env LC_ALL='en_US.UTF-8' $CONT
 buildah config --cmd '/bin/bash' $CONT
 
 buildah commit --rm $CONT localhost/debian-base-${SUITE}:latest
