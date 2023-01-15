@@ -5,7 +5,10 @@ set -ex
 cd "${0%/*}"
 
 SUITE=${1:-bullseye}
-CONT=$(buildah from debian:${SUITE})
+BASE_IMAGE="debian:${SUITE}"
+GIT_COMMIT=$(git describe --always --tags --dirty=-dirty)
+
+CONT=$(buildah from ${BASE_IMAGE})
 
 buildah copy $CONT etc/ /etc
 buildah copy $CONT root/ /root
@@ -14,7 +17,7 @@ buildah run $CONT /bin/bash /setup/setup.sh
 buildah run $CONT rm -rf /setup
 
 buildah config --author "Alexander Veit" $CONT
-buildah config --label commit=$(git describe --always --tags --dirty=-dirty) $CONT
+buildah config --label commit=${GIT_COMMIT} $CONT
 
 buildah config --env LANG='en_US.UTF-8' $CONT
 buildah config --env LANGUAGE='en_US:en' $CONT
