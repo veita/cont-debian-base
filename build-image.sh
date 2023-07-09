@@ -4,7 +4,7 @@ set -ex
 
 cd "${0%/*}"
 
-SUITE=${1:-bullseye}
+SUITE=${1:-bookworm}
 BASE_IMAGE="debian:${SUITE}"
 GIT_COMMIT=$(git describe --always --tags --dirty=-dirty)
 

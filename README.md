@@ -5,17 +5,17 @@ Build a Debian base system container image.
 
 ## Run the image build
 
-To build a Debian 11 Bullseye image run
+To build a Debian 12 Bookworm image run
 
 ```bash
 ./build-container.sh
 ```
 
 To build an image with a specific Debian version
-(`buster`, `bullseye`, `bookworm`) run
+(`bullseye`, `bookworm`, `trixie`) run
 
 ```bash
-./build-container.sh buster
+./build-container.sh bullseye
 ```
 
 ## Run the container
@@ -23,7 +23,7 @@ To build an image with a specific Debian version
 Run the container interactively.
 
 ```bash
-podman run --name debian-base --hostname debian-base --rm -it localhost/debian-base-bullseye:latest
+podman run --name debian-base --hostname debian-base --rm -it localhost/debian-base-bookworm:latest
 ```
 
 
