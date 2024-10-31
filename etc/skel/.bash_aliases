@@ -14,5 +14,3 @@ alias t="screen -dr || screen"
 alias v="vim"
 alias ..="cd .."
 alias ...="cd ../.."
-alias dt="date --utc '+%Y-%m-%d %H:%M:%S UTC'"
-
