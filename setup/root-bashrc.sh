@@ -3,6 +3,11 @@ cat << EOF
 
 PS1='\[\033[01;33m\](container) \u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
 
+function rgc()
+{
+   rg -p "$@" | less -RFX
+}
+
 alias l="ls --time-style=long-iso --color=always -laF"
 alias ll="ls --time-style=long-iso --color=auto -laF"
 alias ls="ls --time-style=long-iso --color=auto"
