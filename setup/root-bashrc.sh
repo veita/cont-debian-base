@@ -20,9 +20,5 @@ alias v="vim"
 alias ..="cd .."
 alias ...="cd ../.."
 
-alias halt="systemctl poweroff"
-alias sc=systemctl
-alias jc=journalctl
-
 EOF
 

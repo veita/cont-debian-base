@@ -36,13 +36,10 @@ source /setup/root-bashrc.sh >> /root/.bashrc
 echo 'set mouse-=a' > /root/.vimrc
 
 # add custom trusted CA certificates
-if [ ls /setup/trusted-ca-certificates/*.crt &> /dev/null ] ; then
-    mkdir /usr/share/ca-certificates/custom
-    cp /setup/trusted-ca-certificates/*.crt /usr/share/ca-certificates/custom
-    find /usr/share/ca-certificates/custom -name '*.crt' -printf 'custom/%f\n' >> /etc/ca-certificates.conf
+if ls /setup/trusted-ca-certificates/*.crt &> /dev/null ; then
+    cp /setup/trusted-ca-certificates/*.crt /usr/local/share/ca-certificates/
     /usr/sbin/update-ca-certificates
 fi
 
 # cleanup
 source /setup/cleanup-image.sh
-
