@@ -30,7 +30,7 @@ sed -i 's|#startup_message off|startup_message off|g' /etc/screenrc
 echo 'shell /bin/bash' >> /etc/screenrc
 
 # shell settings for root
-source /setup/root-bashrc.sh >> /root/.bashrc
+cat /setup/root-bashrc >> /root/.bashrc
 
 # vim settings for root
 echo 'set mouse-=a' > /root/.vimrc
