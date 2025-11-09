@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -exuo pipefail
 
 cd "${0%/*}"
 
@@ -24,5 +24,4 @@ buildah config --env LANGUAGE='en_US:en' $CONT
 buildah config --env LC_ALL='en_US.UTF-8' $CONT
 buildah config --cmd '/bin/bash' $CONT
 
-buildah commit --rm $CONT localhost/debian-base-${SUITE}:latest
-
+buildah commit --rm $CONT localhost/debian-base:${SUITE}
