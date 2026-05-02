@@ -39,3 +39,7 @@ fi
 
 # cleanup
 source /setup/cleanup-image.sh
+
+# create a working directory in /tmp
+mkdir -p /tmp/work
+chmod --reference /tmp /tmp/work
