@@ -7,14 +7,17 @@
 [log]
   date = iso
 [alias]
-  st = status
-  co = checkout
-  br = branch
-  up = rebase
-  ci = commit
-  lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
-  rr = remote -v
   ac = !git add -A && git commit
+  br = branch
+  ci = commit
+  co = checkout
+  fa = fetch --all
+  l = log -3
+  lf = log --follow --patch --
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
   puff = pull --ff-only
+  rr = remote -v
+  st = status
+  up = rebase
 [init]
   defaultBranch = master
